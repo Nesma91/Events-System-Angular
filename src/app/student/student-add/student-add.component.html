@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-5">
+    <input type="text" [(ngModel)]="newStd.fullname" class="form-control m-3" placeholder="Fullname" name="fullname">
+    <input type="text" [(ngModel)]="newStd.email" class="form-control m-3" placeholder="Email" name="email">
+    <input type="password" [(ngModel)]="newStd.password" class="form-control m-3" placeholder="Password" name="password">
+  </div>
+  <div>
+    <button class="button button2 m-3 col-2" (click)="add()">Add</button>
+  </div>
+</div>

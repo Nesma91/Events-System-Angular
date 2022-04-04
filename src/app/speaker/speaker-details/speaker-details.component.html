@@ -1,0 +1,22 @@
+<table *ngIf="speaker">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fullname</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Address</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id: {{speaker?._id}}</td>
+      <td>fullname: {{speaker?.fullname}}</td>
+      <td>email: {{speaker?.email}}</td>
+      <td>password: {{speaker?.password}}</td>
+      <td>address: {{speaker?.address}}</td>
+      <td>image: {{speaker?.image}}</td>
+    </tr>
+  </tbody>
+</table>

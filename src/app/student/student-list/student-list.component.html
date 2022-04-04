@@ -1,0 +1,29 @@
+<!-- <button class="button button2" (click)="loadStudents()">All Students</button> -->
+<table *ngIf="stds.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fullname</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of stds">
+      <td>{{item._id}}</td>
+      <td>{{item.fullname}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.password}}</td>
+      <td>
+        <a class="button button2" [routerLink] = "['/student', 'details', item._id]">Details</a>
+        <button class="button button2" (click)="deleteStd(item._id)">Delete</button>
+        <a class="button button2" [routerLink] = "['/student', 'edit', item._id]">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a class="button button2" [routerLink] = "['/student', 'add']">Add Student</a>
+<router-outlet></router-outlet>
+<!-- <app-student-details [student]="stdDetails"></app-student-details>
+<app-student-edit [stdId]="stdEditId"></app-student-edit> -->

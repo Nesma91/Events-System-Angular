@@ -1,0 +1,29 @@
+<!-- <button class="button button2 m-3" (click)="loadSpeakers()">All Speakers</button> -->
+<table *ngIf="speakers.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fullname</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Image</th>
+      <th>Controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of speakers">
+      <td>{{item._id}}</td>
+      <td>{{item.fullname}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.address}}</td>
+      <td><img [src]="item.image" width="40" height="40" [title]="item.image"></td>
+      <td>
+        <a class="button button2" [routerLink] = "['/speaker', 'details', item._id]">Details</a>
+        <button class="button button2" (click)="deleteSpk(item._id)">Delete</button>
+        <a class="button button2" [routerLink] = "['/speaker', 'edit', item._id]">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a class="button button2" [routerLink] = "['/speaker', 'add']">Add Speaker</a>
+<router-outlet></router-outlet>

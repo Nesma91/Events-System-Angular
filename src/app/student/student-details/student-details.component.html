@@ -1,0 +1,18 @@
+<table *ngIf="student">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Fullname</th>
+      <th>Email</th>
+      <th>Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id: {{student?._id}}</td>
+      <td>fullname: {{student?.fullname}}</td>
+      <td>email: {{student?.email}}</td>
+      <td>password: {{student?.password}}</td>
+    </tr>
+  </tbody>
+</table>
